@@ -53,6 +53,6 @@ set :use_sudo, false
 # Optional tasks ##########################################################################################
 # for use with shared files (e.g. config files)
 after "deploy:update_code" do
-  ##run "ln -s #{shared_path}/uploads #{release_path}/wp-content"
+  	run "cd #{release_path} && jekyll build"
 end
 after "deploy", "deploy:cleanup"
