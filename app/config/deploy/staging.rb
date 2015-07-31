@@ -52,7 +52,8 @@ set :use_sudo, false
 
 # Optional tasks ##########################################################################################
 # for use with shared files (e.g. config files)
-after "deploy:update_code" do
+after "deploy:create_symlink" do
+	run "rm -rf #{release_path}/config #{release_path}/Capfile"
   	run "cd #{release_path} && jekyll build"
 end
 after "deploy", "deploy:cleanup"
