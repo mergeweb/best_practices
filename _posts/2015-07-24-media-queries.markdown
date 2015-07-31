@@ -43,7 +43,7 @@ When you want to use the mixin to add a media query, you do it like so:
 
 {% highlight scss %}
 
-header{background:purple;height:100px;
+header{background: purple; height: 100px;
 	@include bp(tablet){height:80px;}
 	@include bp(mobile){height:50px;}
 }
