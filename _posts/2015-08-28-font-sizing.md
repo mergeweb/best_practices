@@ -74,21 +74,13 @@ h4 { font-size: 1.2em; }
 
 First off, don't worry about the precise/offbeat values.  There are great resources and tools such as [this one](http://pxtoem.com/) and [this one](http://type-scale.com/?size=16&scale=1.333&text=A%20Visual%20Type%20Scale&webfont=Libre+Baskerville&font-family=%27Libre%20Baskerville%27,%20serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=%23333) that provide Em scales and increment ratios.  As you can see in the example above, we have eliminated 6 lines of code.  But let's do some calculation to see what we're really saving.  The above technique (thanks, Ben!) is a clean Sassy way of writing media queries.  The <code>@include bp(large-screens)</code> results in an actual 3 lines of CSS.  So we're up to 18 lines of code eliminated from our CSS file.  But what about the fact that we always have, at a minimum, 2 font families.  We've saved 36 lines of code.  What about the fact that we have, at a minimum 5 breakpoints (usually more).  We've saved about 150 lines of final CSS code.  Equally important, we saved the developer tons of time.
 
-Aside from the fact that the Em technique saves time and file size, it also allows for a more uniform scale for our typography.  This should be well-thought out in the design/UI/UX phase with helps from this [awesome tool](http://type-scale.com/?size=16&scale=1.333&text=A%20Visual%20Type%20Scale&webfont=Libre+Baskerville&font-family=%27Libre%20Baskerville%27,%20serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=%23333).  This is just another example of how performance is just as much the designer's job as it is the developers (later article to come on this topic!)  Now, of course there will be times when we don't want our typography to scale exactly the same at different breakpoints, so there will still be need for overriding in these cases.
+Aside from the fact that the Em technique saves time and file size, it also allows for a more uniform scale for our typography.  This should be well-thought out in the design/UI/UX phase with help from this [awesome tool](http://type-scale.com/?size=16&scale=1.333&text=A%20Visual%20Type%20Scale&webfont=Libre+Baskerville&font-family=%27Libre%20Baskerville%27,%20serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=%23333).  This is just another example of how performance is just as much the designer's job as it is the developers (later article to come on this topic!)  Now, of course there will be times when we don't want our typography to scale exactly the same at different breakpoints, so there will still be need for overriding in these cases.
 
 So let's look at the one downside of this technique known as "compounding Em's". Because Em's are relative to their container, nested elements compound on top of eachother. For example, an li within an li within a ul within an h4 (you get the picture), would end up being super tiny.  In steps the Rem's...
 
 <h4>Rems</h4>
 
 Rem's (Roote Em's) are relative to the root size set on the html (or 16px if no value is set).  Rem's are supported in IE9 and up, so we can use them for all of our new sites.  If we need to support IE8, we can easily set pixel fall-backs.  Because Rem's are relative to the root, they avoid the compounding issue that Em's run into.
-
-<h4>Questions to consider/discuss</h4>
-
-<ul>
-	<li>Is there any reason to continue using pixels</li>
-	<li></li>
-</ul>
-
 
 <h3>Summary</h3>
 
@@ -101,9 +93,16 @@ Rem's (Roote Em's) are relative to the root size set on the html (or 16px if no 
 
 </ul>
 
-<h4>Furthur Reading</h4>
+<h4>Questions to consider/discuss</h4>
 
-<h4>Helpful tools</h4>
+<ul>
+	<li>Is there any reason to continue using pixels.  Will using a uniform approach to typography make sense with the way we design sites.  If not, then the overrides within the relative technique might not save that much time or code.  Need to have a meeting between design/dev to discuss.</li>
+	<li>When to use Ems over Rems?  Immediate reaction is that</li>
+</ul>
+
+<!-- <h4>Furthur Reading</h4>
+
+<h4>Helpful tools</h4> -->
 
 
 
