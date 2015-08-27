@@ -3,10 +3,10 @@ layout: post
 title:  "Font-Sizing: An Overview of px, Em's, & Rem's"
 date:   2015-8-28
 author: Jordan Barber
-categories: design scss
+categories: design
 ---
 
-Until now, we have been using pixels for sizing fonts.  This is not necessarily a bad thing.  Some of the most popular and heaviest-traffic sites the the world currently use pixels when sizing their typography (Bootstrap did not move away from pixels until the release of Bootstrap 4 only a little more than a week ago).
+Until now, we have been using pixels for sizing fonts.  This is not necessarily a bad thing.  Some of the most popular and heaviest-traffic sites in the world currently use pixels when sizing their typography (Bootstrap did not move away from pixels until the release of Bootstrap 4 only a little more than a week ago).
 
 But there are more modern, responsive approaches to web typography, namely the Em and Rem units.  The most significant difference between pixels and Ems/Rems is that the latter are relative, while the former is not.  These relative units are nothing new (the first [article](http://clagnut.com/blog/348/) on Ems was published in 2004).
 
@@ -96,8 +96,8 @@ Rem's (Roote Em's) are relative to the root size set on the html (or 16px if no 
 <h4>Questions to consider/discuss</h4>
 
 <ul>
-	<li>Is there any reason to continue using pixels.  Will using a uniform approach to typography make sense with the way we design sites.  If not, then the overrides within the relative technique might not save that much time or code.  Need to have a meeting between design/dev to discuss.</li>
-	<li>When to use Ems over Rems?  Immediate reaction is that</li>
+	<li>Is there any reason to continue using pixels?  Will using a uniform approach to typography make sense with the way we design sites.  If not, then the overrides within the relative technique might not save that much time or code.  Need to have a meeting between design/dev to discuss.</li>
+	<li>When to use Ems over Rems?  I would like to also discuss this in the next meeting.  Chris Coyier points out an interesting approach <a href="https://css-tricks.com/rems-ems/">here</a>.</li>
 </ul>
 
 <!-- <h4>Furthur Reading</h4>
