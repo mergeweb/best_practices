@@ -97,12 +97,33 @@ Rem's (Roote Em's) are relative to the root size set on the html (or 16px if no 
 
 <ul>
 	<li>Is there any reason to continue using pixels?  Will using a uniform approach to typography make sense with the way we design sites.  If not, then the overrides within the relative technique might not save that much time or code.  Need to have a meeting between design/dev to discuss.</li>
-	<li>When to use Ems over Rems?  I would like to also discuss this in the next meeting.  Chris Coyier points out an interesting approach <a href="https://css-tricks.com/rems-ems/">here</a>.</li>
+	<li>When to use Ems over Rems?  I would like to also discuss this in the next meeting.  Chris Coyier points out an interesting approach <a href="https://css-tricks.com/rems-ems/">here</a>.  Check out the 'conclusion' section of Jeremy Church's <a href="https://j.eremy.net/confused-about-rem-and-em/">article</a>.</li>
 </ul>
 
-<!-- <h4>Furthur Reading</h4>
+<h4>Furthur Reading</h4>
 
-<h4>Helpful tools</h4> -->
+[Font Size Idea: px at the Root, rem for Components, em for Text Elements](https://css-tricks.com/rems-ems/) by Chris Coyier.
+
+[Font Sizing with REM](http://snook.ca/archives/html_and_css/font-size-with-rem) by Jonathan Snook.
+
+[Confused About Rem and Em?](https://j.eremy.net/confused-about-rem-and-em/) by Jeremy Church.
+
+[Web Design Basics: Rem vs. Em vs. Px — Sizing Elements In CSS](https://www.futurehosting.com/blog/web-design-basics-rem-vs-em-vs-px-sizing-elements-in-css/) by Matthew Davis.
+
+[What’s the Deal with Em and Rem?](https://codemyviews.com/blog/whats-the-deal-with-em-and-rem) by Code My Views.
+
+[Good Stack Overflow Thread](http://stackoverflow.com/questions/29686099/media-queries-px-vs-em-vs-rem)
+
+[Treehouse Vid] (https://teamtreehouse.com/library/web-typography/basic-web-typography/fontsizing-px-em-and-rem)
+
+
+<h4>Helpful tools</h4>
+
+[REM Checker](https://offroadcode.com/prototypes/rem-calculator/)
+
+[Pixels to Ems](http://pxtoem.com/)
+
+[Type Scale](http://type-scale.com/) - You can choose visual scales on which to base your typography. You can even import fonts and check them on the scale you are setting up.
 
 
 
