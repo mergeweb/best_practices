@@ -14,33 +14,96 @@ This post summarizes these three approaches, pointing out their ups and downs an
 
 <h4>Pixels</h4>
 
-Pixels are a safe, fixed unit of measure.  They are straightforward and exact.  Unfortunately, simplicity and precision are the only useful aspects of pixels (well, that and browser support). The downsides of pixels are that they are non-responsive and lack accessibilty.  Because pixels are not a relative unit, they cause much more work in responsive web design. Below is a basic set up of how we would handle responsive typography with pixels inside of our SMACCS environment.
+Pixels are a safe, fixed unit of measure.  They are straightforward and exact.  Unfortunately, simplicity and precision are the only useful aspects of pixels (well, that and browser support). The downsides of pixels are that they are non-responsive and lack accessibilty.  Because pixels are not a relative unit, they cause much more work in responsive web design. Below is a basic set up of how we would handle responsive typography with pixels inside of our SMACCS 'states' environment (this sample assumes a 1:1.25 increment ratio in font-size).
 
 {% highlight scss %}
 
 html { font-size: 16px; 
-	@include bp(large-screens){font-size: }
+	@include bp(large-screens){font-size: 20px}
 }
 
 h1 { font-size: 33px; 
-	@include bp(large-screens){}
+	@include bp(large-screens){font-size: 41px}
 }
 
 h2 { font-size: 28px; 
-	@include bp(large-screens){}
+	@include bp(large-screens){font-size: 35px}
 }
 
 h3 { font-size: 23px; 
-	@include bp(large-screens){}
+	@include bp(large-screens){font-size: 29px}
 }
 
 h4 { font-size: 19px; 
-	@include bp(large-screens){}
+	@include bp(large-screens){font-size: 24px}
 }
 
-small { font-size: 13px; 
-	@include bp(large-screens){}
+.small-font { font-size: 13px; 
+	@include bp(large-screens){font-size: 17px}
 }
 
 {% endhighlight %}
+
+As displayed above, we must currently override each pixel declaration for every breakpoint (the above only shows the large-screen breakpoint, but in most cases there would be at least 3 more of these). We will touch further on how the relative nature of Ems and Rems can save time and stress for the Front-End Developer later in the post.
+
+Pixels also have problems with accessibility.  Directly from the [Treehouse video](https://teamtreehouse.com/library/web-typography/basic-web-typography/fontsizing-px-em-and-rem) on typography, “When font-sizes are set in pixels, users cannot increase or decrease the text-size on a page through the browser preferences.” Therefore, the use of pixels does not allow users with visual impairments to alter font-sizes to their needs.  Because we are moving towards making our websites more accessible, this furthers our need to move to a more modern approach.
+
+Let's take a look at how Em's can eliminate massive amounts of code
+
+<h4>Em's</h4>
+
+Ems are relative to their parent’s base size.  1 Em is equal to the current-font size.  If a parent is not set, then 1 Em is equal to the standard browser font-size of 16px.  But wait, if Ems are converted to px units, then why take the extra step?  Because Ems and Rems are to pixels what Sass is to CSS, basically a preprocessor. Using relative fonts will save the developer time and many lines of code while also allowing for a more fluid responsive typography system.  Below is an example of how the previous pixel media queries would look with an Em approach.
+
+{% highlight scss %}
+
+html { font-size: 1em; 
+	@include bp(large-screens){font-size: 1.25em}
+}
+
+h1 { font-size: 2.074em; }
+
+h2 { font-size: 1.728em; }
+
+h3 { font-size: 1.44em; }
+
+h4 { font-size: 1.2em; }
+
+.small-font { font-size: .833em; }
+
+{% endhighlight %}
+
+First off, don't worry about the precise/offbeat values.  There are great resources and tools such as [this one](http://pxtoem.com/) and [this one](http://type-scale.com/?size=16&scale=1.333&text=A%20Visual%20Type%20Scale&webfont=Libre+Baskerville&font-family=%27Libre%20Baskerville%27,%20serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=%23333) that provide Em scales and increment ratios.  As you can see in the example above, we have eliminated 6 lines of code.  But let's do some calculation to see what we're really saving.  The above technique (thanks, Ben!) is a clean Sassy way of writing media queries.  The <code>@include bp(large-screens)</code> results in an actual 3 lines of CSS.  So we're up to 18 lines of code eliminated from our CSS file.  But what about the fact that we always have, at a minimum, 2 font families.  We've saved 36 lines of code.  What about the fact that we have, at a minimum 5 breakpoints (usually more).  We've saved about 150 lines of final CSS code.  Equally important, we saved the developer tons of time.
+
+Aside from the fact that the Em technique saves time and file size, it also allows for a more uniform scale for our typography.  This should be well-thought out in the design/UI/UX phase with helps from this [awesome tool](http://type-scale.com/?size=16&scale=1.333&text=A%20Visual%20Type%20Scale&webfont=Libre+Baskerville&font-family=%27Libre%20Baskerville%27,%20serif&font-weight=400&font-family-headers=&font-weight-headers=inherit&background-color=white&font-color=%23333).  This is just another example of how performance is just as much the designer's job as it is the developers (later article to come on this topic!)  Now, of course there will be times when we don't want our typography to scale exactly the same at different breakpoints, so there will still be need for overriding in these cases.
+
+So let's look at the one downside of this technique known as "compounding Em's". Because Em's are relative to their container, nested elements compound on top of eachother. For example, an li within an li within a ul within an h4 (you get the picture), would end up being super tiny.  In steps the Rem's...
+
+<h4>Rems</h4>
+
+Rem's (Roote Em's) are relative to the root size set on the html (or 16px if no value is set).  Rem's are supported in IE9 and up, so we can use them for all of our new sites.  If we need to support IE8, we can easily set pixel fall-backs.  Because Rem's are relative to the root, they avoid the compounding issue that Em's run into.
+
+<h4>Questions to consider/discuss</h4>
+
+<ul>
+	<li>Is there any reason to continue using pixels</li>
+	<li></li>
+</ul>
+
+
+<h3>Summary</h3>
+
+<ul>
+	<li>Pixels are fixed, simple, and easy to use, but lack accessibilty and are non-responsive</li>
+	<li>Ems and Rems are relative, responsive, and accessible</li>
+	<li>Ems can run into issues with compounding</li>
+	<li>There are tons of awesome tools to optimize relative font-sizing techniques</li>
+	<li>If "Coumpound Ems" becomes an issue, Rems can save the day</li>
+
+</ul>
+
+<h4>Furthur Reading</h4>
+
+<h4>Helpful tools</h4>
+
+
 
