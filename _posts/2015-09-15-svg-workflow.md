@@ -73,7 +73,7 @@ Inside the `<svg>` tag, create a symbol tag, and give it an id that's descriptiv
 
 {% endhighlight %}
 
-Now open your optimized SVG file for this particular SVG. Mine looks like this: 
+Now open your optimized SVG file for this particular SVG. My `arrow.svg` file looks like this: 
 
 {% highlight html %}
 <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 39.4 31.4">
@@ -147,6 +147,8 @@ Since we stripped out all of our styles above, it's a good idea to set some base
 
 You may find that you have other base styles to apply, but since we set the height and width of the SVG in the HTML you probably won't have that many.
 
+Other styles should be added using class names. You can do some pretty cool things with the CSS transform property and SVGs. For instance - you only need one arrow svg, because you can change it's color and change it's direction just with CSS. Pretty cool, huh?
+
 ### 4. Don't Skip These Important Notes
 
 #### 4.1 You must specify width and height attribute within your SVG element
@@ -166,6 +168,8 @@ if ($('.btn').hasClass('menu-btn')){
 	$('.menu-btn').find('use').attr("xlink:href", "#hamburger");
 } 
 {% endhighlight %}
+
+
 
 
 
