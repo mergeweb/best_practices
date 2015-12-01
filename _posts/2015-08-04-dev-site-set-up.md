@@ -98,7 +98,22 @@ git remote add origin https://github.com/mergeweb/cop.git
 git push -u origin master
 </code>
 
-##Step 6: Take a Deep Breath
+##Step 6: Add the dev site to the server
+
+We need to add the site to the server's 'sites availables' folder so that we can deploy the site.
+
+SSH into the server where the dev site will live and <code>cd /etc/apache2/sites-available</code>.  Once in the sites available folder copy one of the existing urls and rename it as your new url.  Replace all older urls with the new url you want.
+
+To finalize this step, you must run the following two commands:
+
+1:  <code>sudo a2ensite yoursite.upupdev.net</code> (of course replace the fake url with your new url)
+2:  <code>sudo service apache2 reload</code>
+
+Your site should now load and you can now deploy to it!
+
+Copy a file in 
+
+##Step 7: Take a Deep Breath
 
 You're about to start a new project. Take a deep breath. Think about all the things you've learned since the last project you started and plan how you might want to implement one or two new things that will fit well into this project. When you're ready -- get started!
 
