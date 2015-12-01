@@ -111,8 +111,6 @@ To finalize this step, you must run the following two commands:
 
 Your site should now load and you can now deploy to it!
 
-Copy a file in 
-
 ##Step 7: Take a Deep Breath
 
 You're about to start a new project. Take a deep breath. Think about all the things you've learned since the last project you started and plan how you might want to implement one or two new things that will fit well into this project. When you're ready -- get started!
