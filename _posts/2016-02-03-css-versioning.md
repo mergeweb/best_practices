@@ -18,6 +18,6 @@ Manually updating the version number is a hassle and adding a timestamp fixes th
 
 Turns out there is a simpler, automated and easier way to accomplish this using PHP's built in <code>filemtime</code> function. To do this simply use the folowing method when you enqueue your stylesheet.
 
-<code>wp<hr />enqueue_style( 'main_css', get_template_directory_uri() . '/compiled_css/main.css' , false, filemtime( get_template_directory() . '/compiled_css/main.css' ), 'screen' );</code>
+<code>wp<u> </u>enqueue_style( 'main_css', get_template_directory_uri() . '/compiled_css/main.css' , false, filemtime( get_template_directory() . '/compiled_css/main.css' ), 'screen' );</code>
 
 The above method adds a new version to the stylesheet anytime the <code>main.css</code> file is updated.  This allows us the benefits of browser caching while making sure that the new css version is updated when code is pushed live.  And it's all right there in the <code>enqueue_style</code> function.
