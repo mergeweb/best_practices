@@ -3,7 +3,7 @@ layout: post
 title:  "SMACSS File Structure"
 date:   2015-7-23
 author: Ben Robertson
-categories: dev-environment smacss scss
+categories: scss
 ---
 
 We follow the SMACSS model of organizing our CSS. SMACSS stands for Scalable Modular Architecture for CSS. The SMACSS way of thinking about CSS is to divide your CSS rules into several categories. Each of these categories will get their own partial in our SCSS structure.
@@ -56,4 +56,3 @@ Then we can wrap it all up by importing all the partials into the merge.style.sc
 
 <h3>Future Notes</h3>
 It would be really cool if we could create (or find) a compass plugin that automatically creates this file structure. :)
-

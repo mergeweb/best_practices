@@ -3,14 +3,14 @@ layout: post
 title:  "Site Performance Basics"
 date:   2015-8-14
 author: Ben Robertson
-categories: performance
+categories: general
 ---
 
 This post is on basic site performance tweaks that generally should be made for every site. We'll keep this up to date as our standards for performance evolve.
 
 ## Measuring Performance
 
-There's a couple ways you can measure performance. There are some simple, browser based solutions, like [Web Page Test](http://www.webpagetest.org/), [GT Metrix](https://gtmetrix.com/), and Google's [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/). 
+There's a couple ways you can measure performance. There are some simple, browser based solutions, like [Web Page Test](http://www.webpagetest.org/), [GT Metrix](https://gtmetrix.com/), and Google's [PageSpeed Insights](https://developers.google.com/speed/pagespeed/insights/).
 
 Those are good to use when you're first starting out as they give you good explanations of the kind of changes you'll need to perform. As you gain more experience with site performance, however, you'll come to see patterns that you'll need to implement for almost every site and you'll want a faster way to run those tests.
 
@@ -19,7 +19,7 @@ Those are good to use when you're first starting out as they give you good expla
 There are also some fun command line tests. Google's Pagespeed Insights has a node.js wrapper, built by [Addy Osmani](http://addyosmani.com/blog/automating-web-performance-measurement-with-psi-for-node/). If you've got node.js and npm installed, run  
 
 `npm install -g psi`  
- 
+
  to install. Then run `psi example.com` to get the Pagespeed analysis of your site on mobile and `psi example.com --strategy=desktop` to get the desktop analysis.
 
 This test is like golf--high scores are bad. The lower your scores across all the test parameters, the faster your site will be. Tackle the high numbers first to get the biggest gains the fastest.

@@ -3,7 +3,7 @@ layout: post
 title:  "Media Queries in SCSS"
 date:   2015-7-24
 author: Ben Robertson
-categories: media-queries SMACSS scss
+categories: scss
 ---
 
 We write all our media queries within the _states.scss file. If the project you are working on follows our standard for SMACSS organization, you should be able to find that file inside:
@@ -16,7 +16,7 @@ We also use a really nifty mixin that makes our media queries super clean. Be su
 
 {% highlight scss %}
 @mixin bp($point) {
-  
+
   $bp-mobile: "(max-width: 767px)";
   $bp-tablet: "(max-width: 1024px)";
   $bp-xlarge: "(max-width: 1599px)";
@@ -24,13 +24,13 @@ We also use a really nifty mixin that makes our media queries super clean. Be su
 
   @if $point == mobile {
     @media #{$bp-mobile}  { @content; }
-  } 
+  }
   @else if $point == tablet {
     @media #{$bp-tablet} { @content; }
   }
   @else if $point == xlarge {
     @media #{$bp-xlarge} { @content; }
-  } 
+  }
   @else if $point == huge {
     @media #{$bp-huge} { @content; }
   }
@@ -70,6 +70,3 @@ header {
 Some people say this code is too bloated. Here's some <a href="http://presentations.kimberlyblessing.com/2013/rwdsummit/Optimizing%20Media%20Queries.pdf">awesome research</a> that Kimberly Blessing did on optimizing media queries, basically showing that it's not a big deal.
 
 Chris Coyier and Dave Rupert also addressed the issue on <a href="http://shoptalkshow.com/episodes/175-rapidfire-48/#t=40:15">shoptalkshow</a>.
-
-
-

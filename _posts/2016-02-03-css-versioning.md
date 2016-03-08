@@ -3,7 +3,7 @@ layout: post
 title:  "Wordpress CSS Versioning - Override Browser Caching"
 date:   2016-02-03
 author: Jordan Barber
-categories: dev-environment
+categories: general
 ---
 
 Browser caching is a wonderful thing.  It speeds up our site's performance and creates a better experience for repeat visitors. But when we push new changes to a live Wordpress site, we need to make sure that any previous user doesn't view our new updated site with an older version of our site's CSS.
@@ -16,7 +16,7 @@ There are many ways to make sure this doesn't happen and (looking at a few of ou
 
 Manually updating the version number is a hassle and adding a timestamp fixes the issue but it does not allow us the benefits of browser caching for our users.  The best method of these three is definitely to append the 'Release' directories version to our CSS as it allows the benefits of browser caching while making sure to override the cache when a change is pushed live.  But...
 
-Turns out there is a simpler, automated and easier way to accomplish this using PHP's built in <code>filemtime</code> function. To do this simply use the folowing method when you enqueue your stylesheet.
+Turns out there is a simpler, automated and easier way to accomplish this using PHP's built in <code>filemtime</code> function. To do this simply use the following method when you enqueue your stylesheet.
 
 <code>wp<u> </u>enqueue<u> </u>style( 'main<u> </u>css', get<u> </u>template<u> </u>directory<u> </u>uri() . '/compiled<u> </u>css/main.css' , false, filemtime( get<u> </u>template<u> </u>directory() . '/compiled_css/main.css' ), 'screen' );</code>
 

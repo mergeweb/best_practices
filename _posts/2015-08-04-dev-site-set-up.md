@@ -3,7 +3,7 @@ layout: post
 title:  "Setting Up a Fresh Dev Site"
 date:   2015-08-04
 author: Ben Robertson
-categories: dev-environment
+categories: general
 ---
 
 ##Step 1: Create the repo
@@ -12,7 +12,7 @@ Sign into our github account, create the repo (name the repo something short but
 
 ## Step 2: Add the site to the Vagrant config.yaml
 
-Open up terminal and cd to your vagrant folder. Once there, checkout the master branch. Cd to <code>puphpet/</code>, and open up the config.yaml in your text editor. 
+Open up terminal and cd to your vagrant folder. Once there, checkout the master branch. Cd to <code>puphpet/</code>, and open up the config.yaml in your text editor.
 
 Find the <code>vhosts:</code> section of the file and add a new entry where your new site fits alphabetically with the other entries. For example, I'm adding the UK College of Pharmacy site, and the repo name is 'cop.' I'll place my new entry in between clemsonvip and dhg. Here's what the entry should look like:
 
@@ -66,7 +66,7 @@ There's a few things we need to do to get the dev environment set up.
 
 We're going to <code>cd /var/www/websites/cop/app</code>, then init a new git repo: <code>git init</code>.
 
-What happens next depends on the site you're starting. For a Drupal or Wordpress install, you'll move a fresh copy of the lastest version into this directory. 
+What happens next depends on the site you're starting. For a Drupal or Wordpress install, you'll move a fresh copy of the lastest version into this directory.
 
 No matter what it is you're doing, you'll definitely have to do these things:
 
@@ -114,7 +114,3 @@ Your site should now load and you can now deploy to it!
 ##Step 7: Take a Deep Breath
 
 You're about to start a new project. Take a deep breath. Think about all the things you've learned since the last project you started and plan how you might want to implement one or two new things that will fit well into this project. When you're ready -- get started!
-
-
-
-

@@ -3,7 +3,7 @@ layout: post
 title:  "SVG Workflow 1.0"
 date:   2015-9-15
 author: Ben Robertson
-categories: svg
+categories: general
 ---
 
 When working with web images, we like to use SVG as much as possible. Because they are scalable, they look good everywhere. And because we can include them inline we can make our sites faster and more performant by limiting the amount of requests we make using images.
@@ -26,7 +26,7 @@ Repeat these steps till you've got all your SVGs into your project folder.
 
 To optimize your SVGs, you can open each file, copy the code, and paste it into the wonderful tool [SVG OMG](https://jakearchibald.github.io/svgomg/) for each file. This will take you a long time, but you should do it with one SVG so you can see what the tool actually does.
 
-Then you should install the command line tool, which depends on node.js. To install run: 
+Then you should install the command line tool, which depends on node.js. To install run:
 
 `npm install -g svgo`
 
@@ -73,7 +73,7 @@ Inside the `<svg>` tag, create a symbol tag, and give it an id that's descriptiv
 
 {% endhighlight %}
 
-Now open your optimized SVG file for this particular SVG. My `arrow.svg` file looks like this: 
+Now open your optimized SVG file for this particular SVG. My `arrow.svg` file looks like this:
 
 {% highlight html %}
 <svg xmlns="http://www.w3.org/2000/svg" id="Layer_1" viewBox="0 0 39.4 31.4">
@@ -166,10 +166,5 @@ You can switch out SVG icons pretty easily with jQuery by referencing the xlink:
 // switches x back to hamburger
 if ($('.btn').hasClass('menu-btn')){
 	$('.menu-btn').find('use').attr("xlink:href", "#hamburger");
-} 
+}
 {% endhighlight %}
-
-
-
-
-
