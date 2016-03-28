@@ -52,7 +52,7 @@ Here's our example from above with the sizes attribute added in:
 <img srcset="/public/img/resp-img/shoes-large.jpg 1024w,
               /public/img/resp-img/shoes-medium.jpg 300w,
               /public/img/resp-img/shoes-small.jpg 150w"
-     sizes="(min-width: 50em) 720px,
+     sizes="(min-width: 50em) 1024px,
             (min-width: 35em) 300px,
             150px"
     src="/public/img/resp-img/shoes-small.jpg"
@@ -70,7 +70,7 @@ Here's the actual image below. If you are using Chrome, you will see a different
 <img srcset="/public/img/resp-img/shoes-large.jpg 1024w,
               /public/img/resp-img/shoes-medium.jpg 300w,
               /public/img/resp-img/shoes-small.jpg 150w"
-    sizes="(min-width: 50em) 720px,
+    sizes="(min-width: 50em) 1024px,
            (min-width: 35em) 300px,
            150px"
     src="/public/img/resp-img/shoes-small.jpg"
