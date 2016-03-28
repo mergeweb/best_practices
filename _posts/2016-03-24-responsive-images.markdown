@@ -30,15 +30,17 @@ The first new attribute we need to utilize is the `srcset` attribute. The `srcse
       alt="a picture of a shoe">
 ~~~
 
+So for this image, we tell the browser that there are three versions of the image available. To the right of the src path, we tell the browser how wide the image is. So image-large.jpg is 1440 pixels wide (you can also use 3x, or 2x for pixel density changes).
+
+With this information in hand, the browser can start to figure out what version of the image is most appropriate in the current context.
+
+Here's how that code actually renders:
+
 <img srcset="/public/img/resp-img/shoes-large.jpg 1024w,
               /public/img/resp-img/shoes-medium.jpg 300w,
               /public/img/resp-img/shoes-small.jpg 150w"
       src="/public/img/resp-img/shoes-small.jpg"
       alt="a picture of a shoe">
-
-So for this image, we tell the browser that there are three versions of the image available. To the right of the src path, we tell the browser how wide the image is. So image-large.jpg is 1440 pixels wide (you can also use 3x, or 2x for pixel density changes).
-
-With this information in hand, the browser can start to figure out what version of the image is most appropriate in the current context.
 
 ### sizes
 
@@ -51,27 +53,57 @@ Here's our example from above with the sizes attribute added in:
               /public/img/resp-img/shoes-medium.jpg 300w,
               /public/img/resp-img/shoes-small.jpg 150w"
      sizes="(min-width: 50em) 720px,
-            (min-width: 35em) 150px,
-            100vw"
+            (min-width: 35em) 300px,
+            150px"
     src="/public/img/resp-img/shoes-small.jpg"
     alt="a picture of a shoe">
 ~~~
 
+The first two entries are media queries. The first entry says that when the viewport has a min-width of 50ems, the image will always be 1024px wide.
+
+The second entry says that if the viewport has a min-width of 35ems, the image will be 300px wide.
+
+The last entry says that the image will be 150px for viewports under 35em wide.
+
+Here's the actual image below. If you are using Chrome, you will see a different sized image as you resize your browser window. In safari, you have to reload the page at each breakpoint to get the new size:
+
 <img srcset="/public/img/resp-img/shoes-large.jpg 1024w,
               /public/img/resp-img/shoes-medium.jpg 300w,
               /public/img/resp-img/shoes-small.jpg 150w"
-     sizes="(min-width: 50em) 1024px,
-            (min-width: 35em) 150px,
-            100vw"
+    sizes="(min-width: 50em) 720px,
+           (min-width: 35em) 300px,
+           150px"
     src="/public/img/resp-img/shoes-small.jpg"
     alt="a picture of a shoe">
 
-The first two entries are media queries. The first entry says that when the viewport has a min-width of 50ems, the image will always be 250px wide.
+### `<img> summary`
 
-The second entry says that if the viewport has a min-width of 35ems, the image will be 33vw wide.
-
-The last entry says that the image will be full-width for viewports under 35em wide.
+Basically what we are doing with these two attributes is giving the browser insight into our CSS so that it can make decisions about what image will be the best for the user. We can serve images that are 10kb to users on mobile and images that are larger (in this case 124kb).
 
 ## The Bigger `<picture>`
 
-## Integrating with CMS
+Just to reiterate, `srcset` should be used when you are simply serving different sizes of the same image. It works best when your aspect ratio and content stay the same but the actual dimensions change.
+
+But what if you want to serve different images? For example, you might need different crops of an image at different viewports. Square for mobile, large rectangles for desktop. If that's the case, you should use the `<picture>` element.
+
+The `<picture>` element is a whole new HTML element, and it functions very similar to the `<video>` element. Here's the syntax:
+
+~~~
+<picture>
+  <source srcset="images/still_life-large.jpg" media="(min-width: 1000px)">
+  <source srcset="images/still_life-small.jpg" media="(max-width: 500px)">
+  <img src="images_src/still_life.jpg" alt="still life">
+</picture>
+~~~
+
+You can see we are still making use of the `srcset` attribute, however, each is wrapped in it's own `<source>` tag. This example is very similar to our `<img>` tag above, because it is simple. But inside the `<picture>` tag, you can do things like serve completely different source types (ie SVG vs PNG).
+
+The `<picture>` element is also a good choice if you want granular control of the image. The browser will do exactly as you say with the `<picture>` element, but with the `<img>` tag it will do a little thinking for you. In most cases, `<img>` should be fine, and will likely even improve over time with features like the Network API coming down the line. Eventually, browsers could detect connection speed and send the most appropriate images in that context.
+
+## Browser Support
+
+As of this writing, `srcset` and `sizes` are supported in Microsoft Edge, Chrome, Firefox, Safari and iOS Safari.
+
+http://caniuse.com/#feat=srcset
+
+If you need to ensure Internet Explorer support, use the [Picturefill library](http://scottjehl.github.io/picturefill/) polyfill. It weighs 5.8kb and will more than make up for itself in peformance savings for serving smaller images.
