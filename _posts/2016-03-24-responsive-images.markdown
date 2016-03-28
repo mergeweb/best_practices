@@ -30,9 +30,9 @@ The first new attribute we need to utilize is the `srcset` attribute. The `srcse
       alt="a picture of a shoe">
 ~~~
 
-<img srcset="/public/img/resp-img/shoes-large.jpg 1440w,
-              /public/img/resp-img/shoes-medium.jpg 720w,
-              /public/img/resp-img/shoes-small.jpg 360w"
+<img srcset="/public/img/resp-img/shoes-large.jpg 1024w,
+              /public/img/resp-img/shoes-medium.jpg 300w,
+              /public/img/resp-img/shoes-small.jpg 150w"
       src="/public/img/resp-img/shoes-small.jpg"
       alt="a picture of a shoe">
 
@@ -57,9 +57,9 @@ Here's our example from above with the sizes attribute added in:
     alt="a picture of a shoe">
 ~~~
 
-<img srcset="/public/img/resp-img/shoes-large.jpg 1440w,
-              /public/img/resp-img/shoes-medium.jpg 720w,
-              /public/img/resp-img/shoes-small.jpg 360w"
+<img srcset="/public/img/resp-img/shoes-large.jpg 1024w,
+              /public/img/resp-img/shoes-medium.jpg 300w,
+              /public/img/resp-img/shoes-small.jpg 150w"
      sizes="(min-width: 50em) 250px,
             (min-width: 35em) 33vw,
             100vw"
