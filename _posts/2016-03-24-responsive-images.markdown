@@ -10,7 +10,7 @@ It's 2016 and we are going to level up our responsive images. We have previously
 
 The trick to performant responsive images is letting the browser decide which version of an image to serve to a user. We can do this with some enhancements to the `<img>` tag or the new `<picture>` tag. Let's start with the `<img>` tag since we will be using that more frequently.
 
-## Upgrade Your <img> Tags
+## Upgrade Your `<img>` Tags
 
 Here's what a typical image tag looks like on one of our sites:
 
