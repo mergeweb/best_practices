@@ -144,9 +144,9 @@ An example might be a related posts feature on a blog. Say we are showing 4 rela
 
 We need to think carefully about what content should be loaded automatically for mobile users, and give them a way to access all content as well. We don't want to make it impossible for them to find content, we just don't want to make them load it if it's not necessary for their purposes.
 
---
+---
 Resources:
 
-[Ajax Include Pattern](https://github.com/filamentgroup/Ajax-Include-Pattern/)
-[Demos](http://filamentgroup.github.io/Ajax-Include-Pattern/test/functional/)
-[Blog post introducing the concept](https://www.filamentgroup.com/lab/ajax-includes-modular-content.html)
+ - [Ajax Include Pattern](https://github.com/filamentgroup/Ajax-Include-Pattern/)
+ - [Demos](http://filamentgroup.github.io/Ajax-Include-Pattern/test/functional/)
+ - [Blog post introducing the concept](https://www.filamentgroup.com/lab/ajax-includes-modular-content.html)
