@@ -6,6 +6,8 @@ author: Ben Robertson
 categories: general
 ---
 
+Use this to start off your github readme for new projects:
+
 ```
 
 # {Site Name}
