@@ -28,6 +28,13 @@ A collection of best practices and wisdom nuggets, from and for the developers a
 
 ## Other Notes
 
+### Adding a new article:
+
+Articles live in the `_posts` directory. Just copy one of those files, rename it and you are on your way (markdown formatting).
+
+You don't need to install Jekyll in order to write an article. Just write an article in Markdown, commit it, and deploy it and it will show up on the live site. If you want to do dev, change css, etc, then you will want to install Jekyll.
+
+### Theme
 Based on the Hyde theme. Hyde is a brazen two-column [Jekyll](http://jekyllrb.com) theme that pairs a prominent sidebar with uncomplicated content. It's based on [Poole](http://getpoole.com), the Jekyll butler.
 
 ## Todos
