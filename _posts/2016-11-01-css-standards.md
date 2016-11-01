@@ -3,7 +3,7 @@ layout: post
 title:  "CSS Standards and Normalization"
 date:   2016-11-01
 author: Josh Boland
-categories: general, scss
+categories: general
 ---
 
 This document is a working draft.
