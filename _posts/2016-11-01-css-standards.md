@@ -9,12 +9,12 @@ categories: general, scss
 This document is a working draft.
 
 ##Purpose
-The purpose of this document will be to define some standardized best practices for how our CSS is composed and organized in out projects.
+The purpose of this document will be to define some standardized best practices for how our CSS is composed and organized in our projects.
 
 ##Goals
 The Goals of Drupal 8's CSS philosophy will serve as a good starting point for our CSS philosophy. Well-architected CSS should be:
 
-###1: Predicatble
+###1: Predictable
 CSS should be consistent and understandable within one project and accross multiple projects. This applies to naming structure, organization of files and the way styles are separated into different parts.
  
 ###2: Maintainable
