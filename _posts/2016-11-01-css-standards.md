@@ -125,7 +125,7 @@ Class names should use full words rather than abbreviations. Remember that your 
 
 Class names for components should use dashes between words. Prefer `class="component-name"` to `class="componentname"`.
 
-We will use a BEM-style class naming system. BEM stands for Block Element Modifier. You can also thing about it as Component, Sub-object, Variant.
+We will use a BEM-style class naming system. BEM stands for Block Element Modifier. You can also think about it as Component, Sub-object, Variant.
 
 Examples:
 ```sass
@@ -145,6 +145,70 @@ Examples:
     &--variant
     &__sub-object
     &__sub-object--variant
+
+
+// A real world example from http://github.com/mergeweb/v2heavy
+.site-header // the site header
+    .site-header__top // the top portion of the site header
+    .site-header__bottom // the bottom portion of the site header
+    .site-header--admin // variant of site-header
+
+
 ```
 
+Additionally, limit your BEM depth to 1. This means that blocks should not have nested elements. If there are elements nested inside of elements, start a new block.
+
+```sass
+// Don't do this
+.block__element__sub-element
+
+
+// Definitely don't do this
+.block__element
+    &__sub-element
+        &__sub-element-2
+
+
+```
+
+Consider name-spacing layout and javascript specific classes.
+
+For instance, instead of using a class name like `.container`, you could use `.layout-container`. Or `.layout-grid`, over `.grid`. This gives the benefit of clear separation between component
+
+Or for javascript that is manipulating the DOM, use something like `.js-behavior-hook`
+ instead of `.behavior-hook` to make sure that it is a dedicated class not used for styling.
+
 <i>Source: [Drupal 8 CSS Architecture | Class Name Formatting](https://www.drupal.org/docs/develop/standards/css/css-architecture-for-drupal-8#formatting)</i>
+
+### Avoid Using id Selectors
+You can use them for Javascript or for providing anchor-links, but don't use them for styling.
+
+### Avoid Vendor Prefixes
+For sites that are using a build tool like Grunt or Gulp, we can skip vendor prefixes in the css in favor of using the [PostCSS Autoprefixer plugin](https://github.com/nDmitry/grunt-postcss). It will automatically determine what prefixes are necessary based on browser support requirements and only include the necessary
+
+### Use relative units for font-sizing.
+Prefer relative units like `rem` or `em` for font-sizing. This allows for more flexible, more maintainable font styling. It also allows us to better control font styles based on what fonts have been loaded or not loaded.
+
+Likewise, avoid specifying units for line-height. Line-height should be a ratio of font-size. You will need to write a lot less css if your line-height ratios are on to begin with.
+
+## Linting
+
+The easiest way to put these guidelines into practice will be to use `sass-lint`. You can install it globally like so: `npm install -g sass-lint` or on a per-project basis like this: `npm install sass-lint --save-dev`
+
+Add a copy of our [.sass-lint.yml](https://github.com/benjamingrobertson/sass-lint/blob/master/.sass-lint.yml) to the root of your project.
+
+To lint your project from the command line, you can do this:
+
+`sass-lint -v`
+
+Or, for as-you-go linting, install the sass-lint plugin for your respective editor:
+ - [PHPStorm Lint Plugin](https://github.com/idok/sass-lint-plugin)
+ - [Atom Plugin](https://atom.io/packages/linter-sass-lint)
+
+sass-lint documentation: https://github.com/sasstools/sass-lint/
+
+## Resources
+We leaned heavily on the following resources for these guidelines:
+ - [Drupal 8 CSS Architecture](https://www.drupal.org/docs/develop/standards/css/css-architecture-for-drupal-8)
+ - [CSS Guidelines](http://cssguidelin.es)
+ - [SMACSS by Jonathon Snook](https://smacss.com/book/)
