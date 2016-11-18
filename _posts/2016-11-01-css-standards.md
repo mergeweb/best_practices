@@ -37,6 +37,7 @@ In addition, we should keep Mark Otto's Golden Rule in mind:
 ## Style Guide
 
 High level (borrowed from [css guidelines](http://cssguidelin.es/#syntax-and-formatting)):
+
  - Sass, not scss.
  - Four (4) space indents, no tabs.
  - Multi-line css
@@ -52,6 +53,7 @@ High level (borrowed from [css guidelines](http://cssguidelin.es/#syntax-and-for
 
 ### Multi-line css
  Selectors and properties each get their own line. Do it like this:
+
  ```sass
 .container
     width: 95%
@@ -62,6 +64,7 @@ High level (borrowed from [css guidelines](http://cssguidelin.es/#syntax-and-for
 White space can give context to class definitions. Include two empty lines between top-level css blocks, and one line between properties and nested classes.
 
 Example:
+
 ```sass
 .card
     padding: 1rem
@@ -81,6 +84,7 @@ Example:
 Nesting depth should be limited to 2.
 
 Example:
+
 ```sass
 .block
     &__element
@@ -93,20 +97,20 @@ Example:
 This helps make the code more readable without horizontal scrolling. Because you're writing multi-line css, this should really only come into play for comments. Limiting your line length will make your comments easier to read and therefore more useful. For instances like long urls or gradient syntax, don't worry about it.
 
 Example:
+
 ```sass
-// This file is where you override default Bootstrap variables. You can find
-// a list of the default Bootstrap variables in _variables.scss
+// This file is where you override default Bootstrap variables. You
+// can find a list of the default Bootstrap variables
+// in _variables.scss
 ```
 
 ### Use single line comments
 Your comments don't have to be on one single line, just don't use `/* These kinds of comments */`, because they will end up in the compiled css. Your comments, even if they are multi-line, should look like this:
 
 ```sass
-// Have fun with it. You better get your coat out, this is going to be a cold
-// painting. Trees live in your fan brush, but you have to scare them out.
-// We don't have to be concerned about it. We just have to let it fall where it
-// will. Put your feelings into it, your heart, it's your world. In life you
-// need colors.
+// This file is where you override default Bootstrap variables. You
+// can find a list of the default Bootstrap variables
+// in _variables.scss
 ```
 
 ### Clean Import paths
@@ -128,6 +132,7 @@ Class names for components should use dashes between words. Prefer `class="compo
 We will use a BEM-style class naming system. BEM stands for Block Element Modifier. You can also think about it as Component, Sub-object, Variant.
 
 Examples:
+
 ```sass
 .block
     .block--modifier
@@ -205,10 +210,11 @@ Or, for as-you-go linting, install the sass-lint plugin for your respective edit
  - [PHPStorm Lint Plugin](https://github.com/idok/sass-lint-plugin)
  - [Atom Plugin](https://atom.io/packages/linter-sass-lint)
 
-sass-lint documentation: https://github.com/sasstools/sass-lint/
+ [sass-lint documentation](https://github.com/sasstools/sass-lint/)
 
 ## Resources
 We leaned heavily on the following resources for these guidelines:
+
  - [Drupal 8 CSS Architecture](https://www.drupal.org/docs/develop/standards/css/css-architecture-for-drupal-8)
  - [CSS Guidelines](http://cssguidelin.es)
  - [SMACSS by Jonathon Snook](https://smacss.com/book/)
