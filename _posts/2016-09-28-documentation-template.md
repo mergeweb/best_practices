@@ -28,6 +28,8 @@ Use this to start off your github readme for new projects:
  - Staging: { http://upup.upupdev.net }
  - Local: { https://lc.upup.com }
 
+ - Live server: {server name}
+
 ## Local Dev
 {This should include all the steps necessary to take you from 0 to a working local environment. Sample steps are included below:}
  1. Clone the repo into /var/www/websites/upup/app
