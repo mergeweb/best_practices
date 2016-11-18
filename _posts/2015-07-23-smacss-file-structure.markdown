@@ -14,6 +14,7 @@ We follow the SMACSS model of organizing our CSS. SMACSS stands for Scalable Mod
 Base rules are where we define all the base styles for our CSS--these are global styles that will be used everywhere and that act as a base for us to build our other styles off of.
 
 Examples of things that would be in your `base` directory:
+
  - Global typography settings (`base/_typography.sass`)
  - Global utility classes (`base/_utilities.sass`)
  - Framework overrides, like Bootstrap (`base/_bootstrap_overrides.sass`)
@@ -59,6 +60,7 @@ scss
 
 
 ### Other Resources
+
  - [SMACSS](https://smacss.com/book/)
  - [Drupal 8 CSS Architecture](https://www.drupal.org/docs/develop/standards/css/css-architecture-for-drupal-8)
  - [CSS Guidelines](http://cssguidelin.es/)
