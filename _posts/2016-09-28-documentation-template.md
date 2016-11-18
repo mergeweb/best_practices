@@ -6,6 +6,8 @@ author: Ben Robertson
 categories: general
 ---
 
+<em>Updated 2016-11-18 by Ben.</em>
+
 Use this to start off your github readme for new projects:
 
 ```
@@ -17,9 +19,7 @@ Use this to start off your github readme for new projects:
  - [URLs](#urls)
  - [Local Dev](#local-dev)
  - [Deployment](#deployment)
-  - [Staging](#staging)
-  - [Production](#production)
- - [Other Notes](#other-notes)
+ - [Important Notes](#important-notes)
  - [Todos](#todos)
 
 ## URLs
