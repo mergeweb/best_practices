@@ -207,6 +207,7 @@ To lint your project from the command line, you can do this:
 `sass-lint -v`
 
 Or, for as-you-go linting, install the sass-lint plugin for your respective editor:
+
  - [PHPStorm Lint Plugin](https://github.com/idok/sass-lint-plugin)
  - [Atom Plugin](https://atom.io/packages/linter-sass-lint)
 
