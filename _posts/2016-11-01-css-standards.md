@@ -88,3 +88,52 @@ Example:
 
 
 ```
+
+### Limit line length to 80 characters
+This helps make the code more readable without horizontal scrolling. Because you're writing multi-line css, this should really only come into play for comments. Limiting your line length will make your comments easier to read and therefore more useful. For instances like long urls or gradient syntax, don't worry about it.
+
+Example:
+```sass
+// This file is where you override default Bootstrap variables. You can find
+// a list of the default Bootstrap variables in _variables.scss
+```
+
+### Clean Import paths
+You don't need to include leading underscores or filename extensions in your import paths. To stay consistent, your imports should look like this:
+
+```sass
+@import "base/typography" // where this file is base/_typography.sass
+@import "base/colors"
+
+@import "layout/grid"
+@import "layout/containers"
+```
+
+### Class Name Format
+Class names should use full words rather than abbreviations. Remember that your class names are written for the benefit of other developers, not the computer. Prefer `class="button"` to `class="btn"`.
+
+Class names for components should use dashes between words. Prefer `class="component-name"` to `class="componentname"`.
+
+We will use a BEM-style class naming system. BEM stands for Block Element Modifier. You can also thing about it as Component, Sub-object, Variant.
+
+Examples:
+```sass
+.block
+    .block--modifier
+    .block__element
+    .block__element--modifier
+
+
+.component-name
+    .component-name--variant
+    .component-name__sub-object
+    .component-name__sub-object--variant
+
+
+.component-name
+    &--variant
+    &__sub-object
+    &__sub-object--variant
+```
+
+<i>Source: [Drupal 8 CSS Architecture | Class Name Formatting](https://www.drupal.org/docs/develop/standards/css/css-architecture-for-drupal-8#formatting)</i>
