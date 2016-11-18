@@ -65,4 +65,4 @@ scss
  - [Drupal 8 CSS Architecture](https://www.drupal.org/docs/develop/standards/css/css-architecture-for-drupal-8)
  - [CSS Guidelines](http://cssguidelin.es/)
  - [Brad Frost | CSS Architecture for Design Systems](http://bradfrost.com/blog/post/css-architecture-for-design-systems/)
- - [Forthcoming article on sass lint](#tbd)
+ - [Up&Up CSS Standards](http://bp.mergeweb.net/scss/2016/11/01/css-standards/)
