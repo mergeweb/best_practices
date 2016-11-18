@@ -39,16 +39,34 @@ Use this to start off your github readme for new projects:
 ## Updating
 {Include special instructions for updating CMS, plugins and modules, so anyone can do it.}
 
+{Wordpress boilerplate:}
+
+You can either update Wordpress and plugins in the wordpress backend on your local or you can use the `wp-cli`.
+ - In your vagrant directory, `vagrant ssh`, then `cd /var/www/websites/{sitename}/app`
+ - To update Wordpress core: `wp core update`
+ - For plugins:
+  - see available updates with `wp plugin list`
+  - update plugins with `wp plugin update {plugin-name}`
+
+{Drupal 8 boilerplate:}
+
+- Updating: `composer update`
+- Install new module `composer require drupal/modulename:~8.0`
+- Remove module `composer remove drupal/modulename`
+
+{Drupal 7 boilerplate:}
+
+The best way to update Drupal 7 projects is with `drush`.
+
+If you have `drush` installed on your vagrant box, you can `cd /var/www/websites/post/app` and then run `drush up --security-only`. Drush will check all modules, themes, and core for security updates, and perform the updates for you.
+
 ## Deployment
 {Include instructions on deploying to staging and production environments.}
+## Deployment
+ - **Staging**: Merge your changes into the testing branch and `cap staging deploy`.
+ - **Production**: Merge your changes into the master branch and `cap prod deploy`.
 
-### Staging
- Just merge your changes into the testing branch and `cap staging deploy`.
-
-### Production
- {If we are hosting:} Just merge your changes into the master branch and `cap prod deploy`.
-
-## Other Notes
+## Important Notes
  {You may want to include other info that may be unique to this project or framework. For instance, how to install new modules in a Drupal project managed by composer.}
 
 ## Todos
