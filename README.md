@@ -5,8 +5,6 @@ A collection of best practices and wisdom nuggets, from and for the developers a
  - [URLs](#urls)
  - [Local Dev](#local-dev)
  - [Deployment](#deployment)
-  - [Staging](#staging)
-  - [Production](#production)
  - [Other Notes](#other-notes)
  - [Todos](#todos)
 
