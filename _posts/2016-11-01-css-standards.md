@@ -98,6 +98,17 @@ Example:
 // a list of the default Bootstrap variables in _variables.scss
 ```
 
+### Use single line comments
+Your comments don't have to be on one single line, just don't use `/* These kinds of comments */`, because they will end up in the compiled css. Your comments, even if they are multi-line, should look like this:
+
+```sass
+// Have fun with it. You better get your coat out, this is going to be a cold
+// painting. Trees live in your fan brush, but you have to scare them out.
+// We don't have to be concerned about it. We just have to let it fall where it
+// will. Put your feelings into it, your heart, it's your world. In life you
+// need colors.
+```
+
 ### Clean Import paths
 You don't need to include leading underscores or filename extensions in your import paths. To stay consistent, your imports should look like this:
 
