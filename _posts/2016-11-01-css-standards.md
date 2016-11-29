@@ -200,7 +200,7 @@ Likewise, avoid specifying units for line-height. Line-height should be a ratio 
 
 The easiest way to put these guidelines into practice will be to use `sass-lint`. You can install it globally like so: `npm install -g sass-lint` or on a per-project basis like this: `npm install sass-lint --save-dev`
 
-Add a copy of our [.sass-lint.yml](https://github.com/benjamingrobertson/sass-lint/blob/master/.sass-lint.yml) to the root of your project.
+Add a copy of our [.sass-lint.yml](https://gist.githubusercontent.com/mergeweb/d317ffde258f718a2aa0d033161ac2fc/raw/5d47ebe144f691d96e0885bfd24c2d47d2905fde/.sass-lint.yml) to the root of your project.
 
 To lint your project from the command line, you can do this:
 
