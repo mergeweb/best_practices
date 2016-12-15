@@ -23,3 +23,5 @@ version:          .1
 
 github:
   repo:           https://github.com/mergeweb/best_practices
+
+theme: jekyll-theme-cayman
