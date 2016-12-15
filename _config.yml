@@ -10,11 +10,11 @@ title:            Up&Up
 tagline:          ''
 description:      'Best practices, code snippets, and other wisdom nuggets'
 url:              http://mergeweb.github.io/best_practices/
-baseurl:          /
+baseurl:          /best_practices/
 
 author:
   name:           'Up&Up'
-  url:            https://twitter.com/merge
+  url:            https://twitter.com/upandupagency
 
 paginate:         5
 
