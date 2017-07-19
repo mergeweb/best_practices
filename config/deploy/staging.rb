@@ -12,8 +12,8 @@
 set :project, 'best_practices' # the GitHub project name
 set :github_user, "mergeweb" # Your GitHub username
 set :domain_name, "bp.mergeweb.net" # should be something like project.mydomain.com
-set :user, 'merge' # VPS hosting ssh username
-set :domain, 'luigi_linode.mergeweb.net' # IP or domain name to ssh to
+set :user, 'upup' # VPS hosting ssh username
+set :domain, 'luigi.upupdev.net' # IP or domain name to ssh to
 
 #### You shouldn't need to change anything below ########################################################
 default_run_options[:pty] = true
