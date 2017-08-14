@@ -1,4 +1,6 @@
-# Best Practices
+# Best Practices [Deprecated]
+
+Please visit https://github.com/mergeweb/docs for the new Github Pages hosted site.
 
 A collection of best practices and wisdom nuggets, from and for the developers at Up&amp;Up.
 
